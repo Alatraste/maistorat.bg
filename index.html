@@ -1,221 +1,976 @@
 <!DOCTYPE html>
 <html lang="bg">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Майстора.bg – Инструменти и крепежи</title>
+<title>Майстора.bg | Инструменти за майстора</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+<style>
+*{box-sizing:border-box}
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f3f3f3;
-            color: #222;
-        }
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f5f5f5;
+    color:#222;
+}
 
-        header {
-            background: #222;
-            color: white;
-            padding: 25px 20px;
-            text-align: center;
-        }
+a{
+    text-decoration:none;
+    color:inherit;
+}
 
-        header h1 {
-            margin: 0;
-            font-size: 38px;
-            letter-spacing: 2px;
-        }
+.topbar{
+    background:#1b1b1b;
+    color:#ddd;
+    font-size:13px;
+    padding:8px 5%;
+    display:flex;
+    justify-content:space-between;
+}
 
-        header p {
-            margin: 8px 0 0;
-            font-size: 17px;
-        }
+header{
+    background:#fff;
+    padding:18px 5%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+}
 
-        nav {
-            background: #333;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            padding: 12px;
-        }
+.logo{
+    font-size:30px;
+    font-weight:900;
+    white-space:nowrap;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 10px 18px;
-            border-radius: 5px;
-        }
+.logo span{
+    color:#e67e00;
+}
 
-        nav a:hover {
-            background: #ff9900;
-            color: #222;
-        }
+.search{
+    display:flex;
+    width:100%;
+    max-width:650px;
+}
 
-        .hero {
-            background: white;
-            text-align: center;
-            padding: 60px 20px;
-        }
+.search input{
+    width:100%;
+    padding:14px;
+    border:2px solid #e67e00;
+    border-right:0;
+    border-radius:6px 0 0 6px;
+    font-size:15px;
+}
 
-        .hero h2 {
-            font-size: 32px;
-            margin-bottom: 15px;
-        }
+.search button{
+    border:0;
+    background:#e67e00;
+    color:#fff;
+    padding:0 22px;
+    font-weight:bold;
+    cursor:pointer;
+    border-radius:0 6px 6px 0;
+}
 
-        .hero p {
-            font-size: 18px;
-            max-width: 700px;
-            margin: auto;
-            line-height: 1.6;
-        }
+.header-icons{
+    display:flex;
+    gap:18px;
+    font-size:14px;
+    white-space:nowrap;
+}
 
-        .categories {
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
+nav{
+    background:#272727;
+    color:white;
+    padding:0 5%;
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+}
 
-        .categories h2 {
-            text-align: center;
-            margin-bottom: 30px;
-        }
+nav a{
+    padding:16px 18px;
+    display:block;
+    font-weight:bold;
+    font-size:14px;
+}
 
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-        }
+nav a:hover{
+    background:#e67e00;
+}
 
-        .card {
-            background: white;
-            padding: 30px 20px;
-            text-align: center;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-        }
+nav .main-category{
+    background:#e67e00;
+}
 
-        .card h3 {
-            margin-top: 0;
-            font-size: 22px;
-        }
+.hero{
+    min-height:410px;
+    background:linear-gradient(90deg,rgba(0,0,0,.82),rgba(0,0,0,.25)),
+               linear-gradient(135deg,#303030,#777);
+    color:white;
+    display:flex;
+    align-items:center;
+    padding:50px 8%;
+}
 
-        .card p {
-            color: #666;
-            line-height: 1.5;
-        }
+.hero-content{
+    max-width:650px;
+}
 
-        .button {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 10px 20px;
-            background: #ff9900;
-            color: #222;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-        }
+.hero-small{
+    color:#ffad33;
+    font-weight:bold;
+    letter-spacing:1px;
+}
 
-        footer {
-            margin-top: 50px;
-            background: #222;
-            color: white;
-            text-align: center;
-            padding: 25px;
-        }
+.hero h1{
+    font-size:52px;
+    margin:10px 0;
+    line-height:1.05;
+}
 
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 28px;
-            }
+.hero p{
+    font-size:20px;
+    line-height:1.5;
+    color:#eee;
+}
 
-            .hero h2 {
-                font-size: 25px;
-            }
-        }
-    </style>
+.btn{
+    display:inline-block;
+    margin-top:15px;
+    background:#e67e00;
+    color:white;
+    padding:13px 22px;
+    border-radius:5px;
+    font-weight:bold;
+}
+
+.container{
+    width:90%;
+    max-width:1350px;
+    margin:auto;
+}
+
+.section{
+    padding:48px 0;
+}
+
+.section-title{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:3px solid #e67e00;
+    margin-bottom:25px;
+}
+
+.section-title h2{
+    margin:0;
+    padding-bottom:12px;
+    font-size:26px;
+}
+
+.section-title a{
+    font-size:14px;
+    font-weight:bold;
+    color:#e67e00;
+}
+
+.categories{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:16px;
+}
+
+.category{
+    background:white;
+    border-radius:8px;
+    overflow:hidden;
+    text-align:center;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+    transition:.2s;
+}
+
+.category:hover{
+    transform:translateY(-4px);
+}
+
+.category-image{
+    height:135px;
+    background:linear-gradient(135deg,#333,#999);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:50px;
+}
+
+.category h3{
+    font-size:15px;
+    margin:15px 8px;
+}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:18px;
+}
+
+.product{
+    background:white;
+    border-radius:8px;
+    padding:14px;
+    position:relative;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
+
+.product-image{
+    height:170px;
+    background:#ededed;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:55px;
+    border-radius:6px;
+}
+
+.badge{
+    position:absolute;
+    top:10px;
+    left:10px;
+    background:#d62828;
+    color:white;
+    font-size:12px;
+    padding:6px 9px;
+    border-radius:4px;
+    font-weight:bold;
+}
+
+.badge.new{
+    background:#138a36;
+}
+
+.product h3{
+    font-size:15px;
+    min-height:38px;
+}
+
+.old-price{
+    color:#999;
+    text-decoration:line-through;
+    font-size:13px;
+}
+
+.price{
+    font-size:21px;
+    color:#d62828;
+    font-weight:bold;
+    margin-top:4px;
+}
+
+.product button{
+    width:100%;
+    margin-top:12px;
+    padding:10px;
+    border:0;
+    border-radius:5px;
+    background:#e67e00;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.promo-banners{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.promo-banner{
+    min-height:200px;
+    padding:30px;
+    color:white;
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    background:linear-gradient(135deg,#202020,#666);
+}
+
+.promo-banner.orange{
+    background:linear-gradient(135deg,#b85b00,#f39c12);
+}
+
+.benefits{
+    background:#fff;
+    padding:30px 5%;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    text-align:center;
+}
+
+.benefit{
+    padding:15px;
+}
+
+.benefit-icon{
+    font-size:35px;
+}
+
+.benefit strong{
+    display:block;
+    margin:8px 0;
+}
+
+.blog{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.article{
+    background:white;
+    border-radius:8px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
+
+.article-image{
+    height:160px;
+    background:linear-gradient(135deg,#444,#aaa);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:45px;
+}
+
+.article-content{
+    padding:18px;
+}
+
+.article h3{
+    margin-top:0;
+}
+
+footer{
+    background:#1d1d1d;
+    color:#ccc;
+    padding:45px 5% 20px;
+}
+
+.footer-grid{
+    max-width:1350px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:35px;
+}
+
+footer h3{
+    color:white;
+}
+
+footer a{
+    display:block;
+    margin:9px 0;
+    color:#bbb;
+}
+
+.copyright{
+    max-width:1350px;
+    margin:35px auto 0;
+    padding-top:20px;
+    border-top:1px solid #444;
+    text-align:center;
+    font-size:13px;
+}
+
+@media(max-width:1050px){
+
+    .categories{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .products{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .blog{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:700px){
+
+    .topbar{
+        display:none;
+    }
+
+    header{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .logo{
+        text-align:center;
+    }
+
+    .header-icons{
+        justify-content:center;
+    }
+
+    nav{
+        justify-content:center;
+    }
+
+    .hero{
+        min-height:330px;
+        padding:35px 6%;
+    }
+
+    .hero h1{
+        font-size:35px;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+
+    .categories{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .products{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .promo-banners{
+        grid-template-columns:1fr;
+    }
+
+    .benefits{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .blog{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:450px){
+
+    .products{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+}
+</style>
 </head>
 
 <body>
 
+<div class="topbar">
+    <div>Професионални инструменти за всеки майстор</div>
+    <div>Помощ • Доставка • Контакти</div>
+</div>
+
 <header>
-    <h1>МАЙСТОРА.BG</h1>
-    <p>Инструменти • Крепежи • Всичко за майстора</p>
+
+    <div class="logo">
+        МАЙСТОРА<span>.BG</span>
+    </div>
+
+    <div class="search">
+        <input type="text" placeholder="Какво търсите?">
+        <button>ТЪРСИ</button>
+    </div>
+
+    <div class="header-icons">
+        <span>👤 Профил</span>
+        <span>❤ Любими</span>
+        <span>🛒 Количка</span>
+    </div>
+
 </header>
 
 <nav>
-    <a href="#">Начало</a>
-    <a href="#">Инструменти</a>
-    <a href="#">Крепежи</a>
-    <a href="#">Консумативи</a>
-    <a href="#">Контакти</a>
+
+    <a class="main-category" href="#categories">
+        МАШИНИ И ПРИНАДЛЕЖНОСТИ
+    </a>
+
+    <a href="#">МАРКИ</a>
+    <a href="#promo">ПРОМОЦИИ</a>
+    <a href="#sale">РАЗПРОДАЖБА</a>
+    <a href="#new">НОВО</a>
+    <a href="#blog">БЛОГ</a>
+    <a href="#contacts">КОНТАКТИ</a>
+
 </nav>
 
 <section class="hero">
-    <h2>Добре дошли при Майстора!</h2>
 
-    <p>
-        Професионални инструменти, крепежи и консумативи
-        за всеки майстор.
-    </p>
+    <div class="hero-content">
 
-    <a href="#" class="button">Разгледай продуктите</a>
+        <div class="hero-small">
+            МАЙСТОРА.BG
+        </div>
+
+        <h1>
+            Инструменти за истински майстори
+        </h1>
+
+        <p>
+            Машини, ръчни инструменти, консумативи и принадлежности
+            за професионалната работа и домашната работилница.
+        </p>
+
+        <a class="btn" href="#categories">
+            РАЗГЛЕДАЙ ПРОДУКТИТЕ
+        </a>
+
+    </div>
+
 </section>
 
-<section class="categories">
+<main class="container">
 
-    <h2>Нашите категории</h2>
+<section class="section" id="categories">
 
-    <div class="cards">
+    <div class="section-title">
+        <h2>Машини и принадлежности</h2>
+        <a href="#">ВСИЧКИ КАТЕГОРИИ →</a>
+    </div>
 
-        <div class="card">
-            <h3>🔧 Инструменти</h3>
-            <p>
-                Ръчни и професионални инструменти
-                за всякакъв вид работа.
-            </p>
-            <a href="#" class="button">Разгледай</a>
+    <div class="categories">
+
+        <a class="category" href="#">
+            <div class="category-image">⚡</div>
+            <h3>Електроинструменти</h3>
+        </a>
+
+        <a class="category" href="#">
+            <div class="category-image">🔩</div>
+            <h3>Акумулаторни инструменти</h3>
+        </a>
+
+        <a class="category" href="#">
+            <div class="category-image">🔧</div>
+            <h3>Ръчни инструменти</h3>
+        </a>
+
+        <a class="category" href="#">
+            <div class="category-image">🪚</div>
+            <h3>Режещи инструменти</h3>
+        </a>
+
+        <a class="category" href="#">
+            <div class="category-image">🛠️</div>
+            <h3>Принадлежности</h3>
+        </a>
+
+        <a class="category" href="#">
+            <div class="category-image">⚙️</div>
+            <h3>Консумативи</h3>
+        </a>
+
+        <a class="category" href="#">
+            <div class="category-image">🔨</div>
+            <h3>Строителни инструменти</h3>
+        </a>
+
+        <a class="category" href="#">
+            <div class="category-image">🧰</div>
+            <h3>Куфари и съхранение</h3>
+        </a>
+
+        <a class="category" href="#">
+            <div class="category-image">🧱</div>
+            <h3>Пробиване</h3>
+        </a>
+
+        <a class="category" href="#">
+            <div class="category-image">✂️</div>
+            <h3>Рязане</h3>
+        </a>
+
+        <a class="category" href="#">
+            <div class="category-image">🔋</div>
+            <h3>Батерии и зарядни</h3>
+        </a>
+
+        <a class="category" href="#">
+            <div class="category-image">🦺</div>
+            <h3>Работна екипировка</h3>
+        </a>
+
+    </div>
+
+</section>
+
+<section class="section">
+
+    <div class="promo-banners">
+
+        <div class="promo-banner">
+
+            <div>
+                <h2>Професионална серия</h2>
+                <p>Инструменти за тежка и ежедневна работа.</p>
+                <a class="btn" href="#">РАЗГЛЕДАЙ</a>
+            </div>
+
         </div>
 
-        <div class="card">
-            <h3>🔩 Крепежи</h3>
-            <p>
-                Болтове, гайки, винтове, дюбели
-                и други крепежни елементи.
-            </p>
-            <a href="#" class="button">Разгледай</a>
-        </div>
+        <div class="promo-banner orange">
 
-        <div class="card">
-            <h3>⚙️ Консумативи</h3>
-            <p>
-                Дискове, свредла, битове и
-                други консумативи.
-            </p>
-            <a href="#" class="button">Разгледай</a>
-        </div>
+            <div>
+                <h2>Специални предложения</h2>
+                <p>Подбрани продукти на специални цени.</p>
+                <a class="btn" href="#">ВИЖ ОФЕРТИТЕ</a>
+            </div>
 
-        <div class="card">
-            <h3>🛠️ За майстора</h3>
-            <p>
-                Всичко необходимо за работа
-                в дома, гаража или работилницата.
-            </p>
-            <a href="#" class="button">Разгледай</a>
         </div>
 
     </div>
 
 </section>
 
-<footer>
-    <p>© 2026 Майстора.bg</p>
-    <p>Инструменти и крепежи</p>
+<section class="section" id="promo">
+
+    <div class="section-title">
+        <h2>🔥 Промоционална оферта</h2>
+        <a href="#">ВСИЧКИ ПРОДУКТИ →</a>
+    </div>
+
+    <div class="products">
+
+        <div class="product">
+            <span class="badge">-20%</span>
+            <div class="product-image">🔧</div>
+            <h3>Професионален винтоверт</h3>
+            <div class="old-price">249.00 лв.</div>
+            <div class="price">199.00 лв.</div>
+            <button>ДОБАВИ В КОЛИЧКА</button>
+        </div>
+
+        <div class="product">
+            <span class="badge">-15%</span>
+            <div class="product-image">⚙️</div>
+            <h3>Ъглошлайф професионален</h3>
+            <div class="old-price">189.00 лв.</div>
+            <div class="price">159.00 лв.</div>
+            <button>ДОБАВИ В КОЛИЧКА</button>
+        </div>
+
+        <div class="product">
+            <span class="badge">-25%</span>
+            <div class="product-image">🔨</div>
+            <h3>Перфоратор SDS Plus</h3>
+            <div class="old-price">319.00 лв.</div>
+            <div class="price">239.00 лв.</div>
+            <button>ДОБАВИ В КОЛИЧКА</button>
+        </div>
+
+        <div class="product">
+            <span class="badge">-10%</span>
+            <div class="product-image">🪚</div>
+            <h3>Циркулярен трион</h3>
+            <div class="old-price">299.00 лв.</div>
+            <div class="price">269.00 лв.</div>
+            <button>ДОБАВИ В КОЛИЧКА</button>
+        </div>
+
+        <div class="product">
+            <span class="badge">-18%</span>
+            <div class="product-image">🔋</div>
+            <h3>Акумулаторна батерия</h3>
+            <div class="old-price">159.00 лв.</div>
+            <div class="price">129.00 лв.</div>
+            <button>ДОБАВИ В КОЛИЧКА</button>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="section" id="sale">
+
+    <div class="section-title">
+        <h2>💥 Разпродажба</h2>
+        <a href="#">ВСИЧКИ ПРОДУКТИ →</a>
+    </div>
+
+    <div class="products">
+
+        <div class="product">
+            <span class="badge">SALE</span>
+            <div class="product-image">🧰</div>
+            <h3>Комплект ръчни инструменти</h3>
+            <div class="old-price">199.00 лв.</div>
+            <div class="price">139.00 лв.</div>
+            <button>ДОБАВИ В КОЛИЧКА</button>
+        </div>
+
+        <div class="product">
+            <span class="badge">SALE</span>
+            <div class="product-image">🔩</div>
+            <h3>Комплект битове</h3>
+            <div class="old-price">69.00 лв.</div>
+            <div class="price">49.00 лв.</div>
+            <button>ДОБАВИ В КОЛИЧКА</button>
+        </div>
+
+        <div class="product">
+            <span class="badge">SALE</span>
+            <div class="product-image">🔧</div>
+            <h3>Комплект гаечни ключове</h3>
+            <div class="old-price">119.00 лв.</div>
+            <div class="price">89.00 лв.</div>
+            <button>ДОБАВИ В КОЛИЧКА</button>
+        </div>
+
+        <div class="product">
+            <span class="badge">SALE</span>
+            <div class="product-image">🛠️</div>
+            <h3>Професионални клещи</h3>
+            <div class="old-price">79.00 лв.</div>
+            <div class="price">59.00 лв.</div>
+            <button>ДОБАВИ В КОЛИЧКА</button>
+        </div>
+
+        <div class="product">
+            <span class="badge">SALE</span>
+            <div class="product-image">⚡</div>
+            <h3>Ударна бормашина</h3>
+            <div class="old-price">179.00 лв.</div>
+            <div class="price">129.00 лв.</div>
+            <button>ДОБАВИ В КОЛИЧКА</button>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="section" id="new">
+
+    <div class="section-title">
+        <h2>✨ Нови продукти</h2>
+        <a href="#">ВСИЧКИ НОВИ ПРОДУКТИ →</a>
+    </div>
+
+    <div class="products">
+
+        <div class="product">
+            <span class="badge new">НОВО</span>
+            <div class="product-image">🔋</div>
+            <h3>Нов акумулаторен винтоверт</h3>
+            <div class="price">289.00 лв.</div>
+            <button>ДОБАВИ В КОЛИЧКА</button>
+        </div>
+
+        <div class="product">
+            <span class="badge new">НОВО</span>
+            <div class="product-image">⚙️</div>
+            <h3>Безчетков ъглошлайф</h3>
+            <div class="price">329.00 лв.</div>
+            <button>ДОБАВИ В КОЛИЧКА</button>
+        </div>
+
+        <div class="product">
+            <span class="badge new">НОВО</span>
+            <div class="product-image">🔨</div>
+            <h3>Нов професионален перфоратор</h3>
+            <div class="price">399.00 лв.</div>
+            <button>ДОБАВИ В КОЛИЧКА</button>
+        </div>
+
+        <div class="product">
+            <span class="badge new">НОВО</span>
+            <div class="product-image">🪚</div>
+            <h3>Акумулаторен трион</h3>
+            <div class="price">349.00 лв.</div>
+            <button>ДОБАВИ В КОЛИЧКА</button>
+        </div>
+
+        <div class="product">
+            <span class="badge new">НОВО</span>
+            <div class="product-image">🧰</div>
+            <h3>Модулен куфар за инструменти</h3>
+            <div class="price">169.00 лв.</div>
+            <button>ДОБАВИ В КОЛИЧКА</button>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="section">
+
+    <div class="section-title">
+        <h2>👁 Последно разглеждани</h2>
+    </div>
+
+    <div class="products">
+
+        <div class="product">
+            <div class="product-image">🔧</div>
+            <h3>Акумулаторен винтоверт</h3>
+            <div class="price">199.00 лв.</div>
+        </div>
+
+        <div class="product">
+            <div class="product-image">⚙️</div>
+            <h3>Ъглошлайф</h3>
+            <div class="price">159.00 лв.</div>
+        </div>
+
+        <div class="product">
+            <div class="product-image">🔨</div>
+            <h3>Перфоратор</h3>
+            <div class="price">239.00 лв.</div>
+        </div>
+
+        <div class="product">
+            <div class="product-image">🧰</div>
+            <h3>Комплект инструменти</h3>
+            <div class="price">139.00 лв.</div>
+        </div>
+
+        <div class="product">
+            <div class="product-image">🔋</div>
+            <h3>Батерия 18V</h3>
+            <div class="price">129.00 лв.</div>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="section" id="blog">
+
+    <div class="section-title">
+        <h2>Полезно за майстора</h2>
+        <a href="#">ВСИЧКИ СТАТИИ →</a>
+    </div>
+
+    <div class="blog">
+
+        <article class="article">
+            <div class="article-image">🔧</div>
+            <div class="article-content">
+                <h3>Как да изберем правилния винтоверт?</h3>
+                <p>Основните неща, които трябва да знаем преди покупка.</p>
+            </div>
+        </article>
+
+        <article class="article">
+            <div class="article-image">⚙️</div>
+            <div class="article-content">
+                <h3>Какъв ъглошлайф ни е необходим?</h3>
+                <p>Мощност, размер на диска и приложение.</p>
+            </div>
+        </article>
+
+        <article class="article">
+            <div class="article-image">🔋</div>
+            <div class="article-content">
+                <h3>Как да пазим батериите?</h3>
+                <p>Практични съвети за по-дълъг живот.</p>
+            </div>
+        </article>
+
+        <article class="article">
+            <div class="article-image">🛠️</div>
+            <div class="article-content">
+                <h3>10 инструмента за домашната работилница</h3>
+                <p>Основният комплект за всеки домашен майстор.</p>
+            </div>
+        </article>
+
+    </div>
+
+</section>
+
+</main>
+
+<section class="benefits">
+
+    <div class="benefit">
+        <div class="benefit-icon">🚚</div>
+        <strong>Бърза доставка</strong>
+        <span>До цялата страна</span>
+    </div>
+
+    <div class="benefit">
+        <div class="benefit-icon">🛡️</div>
+        <strong>Гаранция</strong>
+        <span>Оригинални продукти</span>
+    </div>
+
+    <div class="benefit">
+        <div class="benefit-icon">💬</div>
+        <strong>Професионална консултация</strong>
+        <span>Помагаме при избора</span>
+    </div>
+
+    <div class="benefit">
+        <div class="benefit-icon">↩️</div>
+        <strong>Лесно връщане</strong>
+        <span>Сигурно пазаруване</span>
+    </div>
+
+</section>
+
+<footer id="contacts">
+
+<div class="footer-grid">
+
+    <div>
+        <h3>МАЙСТОРА.BG</h3>
+        <p>
+            Инструменти, машини и принадлежности
+            за професионалисти и домашни майстори.
+        </p>
+    </div>
+
+    <div>
+        <h3>Информация</h3>
+        <a href="#">За нас</a>
+        <a href="#">Доставка</a>
+        <a href="#">Плащане</a>
+        <a href="#">Гаранция</a>
+        <a href="#">Връщане</a>
+    </div>
+
+    <div>
+        <h3>Обслужване</h3>
+        <a href="#">Контакти</a>
+        <a href="#">Често задавани въпроси</a>
+        <a href="#">Общи условия</a>
+        <a href="#">Лични данни</a>
+    </div>
+
+    <div>
+        <h3>Последвайте ни</h3>
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">YouTube</a>
+    </div>
+
+</div>
+
+<div class="copyright">
+    © 2026 Майстора.bg — тестова версия на сайта
+</div>
+
 </footer>
 
 </body>
