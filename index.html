@@ -244,7 +244,21 @@ border-radius:5px;
     position:relative;
     box-shadow:0 2px 8px rgba(0,0,0,.08);
 }
-
+.favorite{
+    position:absolute;
+    top:12px;
+    right:12px;
+    width:auto;
+    margin:0;
+    padding:0;
+    border:0;
+    background:transparent;
+    color:#0057B8;
+    font-size:28px;
+    line-height:1;
+    cursor:pointer;
+    z-index:5;
+}
 .product-image{
     height:170px;
     background:#ededed;
@@ -638,7 +652,8 @@ footer a{
 
     <div class="products">
 
-        <div class="product">
+        <div class="product"> 
+         <button class="favorite" title="Добави в любими">♡</button>
             <span class="badge">-20%</span>
             <div class="product-image">🔧</div>
             <h3>Професионален винтоверт</h3>
