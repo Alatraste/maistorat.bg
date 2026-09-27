@@ -85,20 +85,26 @@ header{
 }
 
 nav{
-    margin-top:6px;
+   margin-top:6px;
+    width:100%;
     background:#123B6D;
     color:white;
     padding:0 5%;
     display:flex;
-    align-items:center;
-    flex-wrap:wrap;
+    align-items:stretch;
+    justify-content:space-between;
+    flex-wrap:nowrap;
 }
-
 nav a{
-    padding:16px 18px;
-    display:block;
+    padding:16px 14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
     font-weight:bold;
     font-size:14px;
+    color:white;
+    white-space:nowrap;
+    flex:1;
 }
 
 nav a:hover{
