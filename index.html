@@ -998,12 +998,22 @@ footer a{
 
 </footer>
 <script>
-document.querySelectorAll('.favorite').forEach(function(heart) {
+const hearts = document.querySelectorAll('.favorite');
+
+hearts.forEach((heart, index) => {
+    const saved = localStorage.getItem('favorite-' + index);
+
+    if (saved === 'true') {
+        heart.textContent = '♥';
+    }
+
     heart.addEventListener('click', function() {
-        if (this.textContent === '♡') {
+        if (this.textContent.trim() === '♡') {
             this.textContent = '♥';
+            localStorage.setItem('favorite-' + index, 'true');
         } else {
             this.textContent = '♡';
+            localStorage.setItem('favorite-' + index, 'false');
         }
     });
 });
