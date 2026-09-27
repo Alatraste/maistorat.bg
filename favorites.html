@@ -202,6 +202,24 @@ for (let i = 0; i < 100; i++) {
     if (product) {
         favoritesBox.insertAdjacentHTML('beforeend', product);
         found = true;
+
+        const addedProduct = favoritesBox.lastElementChild;
+        const heart = addedProduct.querySelector('.favorite');
+
+        if (heart) {
+            heart.textContent = '♥';
+
+            heart.addEventListener('click', function () {
+                localStorage.removeItem('favorite-product-' + i);
+                localStorage.setItem('favorite-' + i, 'false');
+                addedProduct.remove();
+
+                if (favoritesBox.children.length === 0) {
+                    favoritesBox.innerHTML =
+                        '<div class="empty">Все още нямате добавени любими продукти.</div>';
+                }
+            });
+        }
     }
 }
 
