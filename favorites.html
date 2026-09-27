@@ -99,6 +99,25 @@ h1{
         </div>
     </div>
 </main>
+<script>
+const favoritesBox = document.getElementById('favorites');
+let found = false;
 
+favoritesBox.innerHTML = '';
+
+for (let i = 0; i < 100; i++) {
+    const product = localStorage.getItem('favorite-product-' + i);
+
+    if (product) {
+        favoritesBox.insertAdjacentHTML('beforeend', product);
+        found = true;
+    }
+}
+
+if (!found) {
+    favoritesBox.innerHTML =
+        '<div class="empty">Все още нямате добавени любими продукти.</div>';
+}
+</script>
 </body>
 </html>
