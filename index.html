@@ -1001,19 +1001,33 @@ footer a{
 const hearts = document.querySelectorAll('.favorite');
 
 hearts.forEach((heart, index) => {
+    const product = heart.closest('.product');
+
     const saved = localStorage.getItem('favorite-' + index);
 
     if (saved === 'true') {
         heart.textContent = '♥';
     }
 
-    heart.addEventListener('click', function() {
+    heart.addEventListener('click', function () {
+
         if (this.textContent.trim() === '♡') {
             this.textContent = '♥';
+
             localStorage.setItem('favorite-' + index, 'true');
+
+            if (product) {
+                localStorage.setItem(
+                    'favorite-product-' + index,
+                    product.outerHTML
+                );
+            }
+
         } else {
             this.textContent = '♡';
+
             localStorage.setItem('favorite-' + index, 'false');
+            localStorage.removeItem('favorite-product-' + index);
         }
     });
 });
