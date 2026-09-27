@@ -534,7 +534,7 @@ footer a{
 
     <div class="header-icons">
         <span>👤 Профил</span>
-        <a href="favorites.html">♥ Любими</a>
+        <a href="favorites.html">♥ Любими (<span id="favorites-count">0</span>)</a>
         <span>🛒 Количка</span>
     </div>
 
@@ -1031,6 +1031,22 @@ hearts.forEach((heart, index) => {
         }
     });
 });
+ function updateFavoritesCount() {
+    let count = 0;
+
+    for (let i = 0; i < 100; i++) {
+        if (localStorage.getItem('favorite-' + i) === 'true') {
+            count++;
+        }
+    }
+
+    const counter = document.getElementById('favorites-count');
+    if (counter) {
+        counter.textContent = count;
+    }
+}
+
+updateFavoritesCount();
 </script>
  
 </body>
