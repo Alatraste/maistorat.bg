@@ -997,6 +997,17 @@ footer a{
 </div>
 
 </footer>
-
+<script>
+document.querySelectorAll('.favorite').forEach(function(heart) {
+    heart.addEventListener('click', function() {
+        if (this.textContent === '♡') {
+            this.textContent = '♥';
+        } else {
+            this.textContent = '♡';
+        }
+    });
+});
+</script>
+ 
 </body>
 </html>
