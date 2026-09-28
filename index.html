@@ -1070,7 +1070,7 @@ hearts.forEach((heart, index) => {
     let count = 0;
 
     for (let i = 0; i < 100; i++) {
-        if (localStorage.getItem('favorite-' + i) === 'true') {
+       if (localStorage.getItem('favorite-product-' + i) !== null) {
             count++;
         }
     }
