@@ -1064,13 +1064,14 @@ hearts.forEach((heart, index) => {
             localStorage.setItem('favorite-' + index, 'false');
             localStorage.removeItem('favorite-product-' + index);
         }
+     updateFavoritesCount();
     });
 });
  function updateFavoritesCount() {
     let count = 0;
 
     for (let i = 0; i < 100; i++) {
-       if (localStorage.getItem('favorite-product-' + i) !== null) {
+       if (localStorage.getItem('favorite-' + i) === 'true') {
             count++;
         }
     }
