@@ -1059,12 +1059,14 @@ hearts.forEach((heart, index) => {
             }
 
         } else {
-            this.textContent = '♡';
+    this.textContent = '♡';
 
-            localStorage.setItem('favorite-' + index, 'false');
-            localStorage.removeItem('favorite-product-' + index);
-        }
-     updateFavoritesCount();
+    localStorage.setItem('favorite-' + index, 'false');
+    localStorage.removeItem('favorite-product-' + index);
+
+    
+}
+         updateFavoritesCount()
     });
 });
  function updateFavoritesCount() {
