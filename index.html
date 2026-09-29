@@ -1072,8 +1072,10 @@ hearts.forEach((heart, index) => {
  function updateFavoritesCount() {
     let count = 0;
 
-    for (let i = 0; i < 100; i++) {
-       if (localStorage.getItem('favorite-' + i) === 'true') {
+    for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+
+        if (key && key.startsWith('favorite-') && localStorage.getItem(key) === 'true') {
             count++;
         }
     }
@@ -1084,7 +1086,7 @@ hearts.forEach((heart, index) => {
     }
 }
 
-updateFavoritesCount();
+updateFavoritesCount();;
 </script>
  
 </body>
