@@ -26,6 +26,65 @@
         main {
             flex: 1;
         }
+
+        /* СТРАНИЦА МАРКИ */
+
+.brands-section {
+    width: 100%;
+    padding: 25px 30px 40px;
+    background: #f5f5f5;
+}
+
+.brands-section h1 {
+    font-size: 42px;
+    margin: 0 0 18px;
+    color: #123b5d;
+}
+
+.brands-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.brand-card {
+    height: 105px;
+    background: white;
+    border: 1px solid #dddddd;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    text-decoration: none;
+}
+
+.brand-card img {
+    display: block;
+    max-width: 85%;
+    max-height: 75px;
+    object-fit: contain;
+}
+
+.brand-card:hover {
+    box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+    transform: translateY(-2px);
+}
+
+/* Телефон */
+@media (max-width: 700px) {
+    .brands-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .brands-section {
+        padding: 20px 15px 30px;
+    }
+
+    .brands-section h1 {
+        font-size: 32px;
+    }
+}
     </style>
 </head>
 
@@ -36,6 +95,58 @@
 
     <!-- ТУК ЩЕ ПРАВИМ СТРАНИЦАТА МАРКИ -->
     <main>
+       <section class="brands-section">
+
+    <h1>Марки</h1>
+
+    <div class="brands-grid">
+
+        <a class="brand-card" href="#"><img src="logos/knipex.png" alt="Knipex"></a>
+        <a class="brand-card" href="#"><img src="logos/wera.png" alt="Wera"></a>
+        <a class="brand-card" href="#"><img src="logos/bosch-professional.png" alt="Bosch Professional"></a>
+        <a class="brand-card" href="#"><img src="logos/fischer.png" alt="Fischer"></a>
+
+        <a class="brand-card" href="#"><img src="logos/gedore.png" alt="Gedore"></a>
+        <a class="brand-card" href="#"><img src="logos/knauf.png" alt="Knauf"></a>
+        <a class="brand-card" href="#"><img src="logos/metabo.png" alt="Metabo"></a>
+        <a class="brand-card" href="#"><img src="logos/keil.png" alt="Keil"></a>
+
+        <a class="brand-card" href="#"><img src="logos/stanley.png" alt="Stanley"></a>
+        <a class="brand-card" href="#"><img src="logos/force.png" alt="Force"></a>
+        <a class="brand-card" href="#"><img src="logos/makita.png" alt="Makita"></a>
+        <a class="brand-card" href="#"><img src="logos/distar.png" alt="Distar"></a>
+
+        <a class="brand-card" href="#"><img src="logos/gedore-red.png" alt="Gedore Red"></a>
+        <a class="brand-card" href="#"><img src="logos/pard.png" alt="Pard"></a>
+        <a class="brand-card" href="#"><img src="logos/dewalt.png" alt="DeWalt"></a>
+        <a class="brand-card" href="#"><img src="logos/bihui.png" alt="Bihui"></a>
+
+        <a class="brand-card" href="#"><img src="logos/wurth.png" alt="Würth"></a>
+        <a class="brand-card" href="#"><img src="logos/cf.png" alt="CF"></a>
+        <a class="brand-card" href="#"><img src="logos/bosch.png" alt="Bosch"></a>
+        <a class="brand-card" href="#"><img src="logos/mechanic.png" alt="Mechanic"></a>
+
+        <a class="brand-card" href="#"><img src="logos/topmaster.png" alt="Topmaster"></a>
+        <a class="brand-card" href="#"><img src="logos/premium.png" alt="Premium"></a>
+        <a class="brand-card" href="#"><img src="logos/raider.png" alt="Raider"></a>
+        <a class="brand-card" href="#"><img src="logos/pferd.png" alt="Pferd"></a>
+
+        <a class="brand-card" href="#"><img src="logos/gross.png" alt="Gross"></a>
+        <a class="brand-card" href="#"><img src="logos/mtx.png" alt="MTX"></a>
+        <a class="brand-card" href="#"><img src="logos/stenso.png" alt="Stenso"></a>
+        <a class="brand-card" href="#"><img src="logos/prom.png" alt="PRO M"></a>
+
+        <a class="brand-card" href="#"><img src="logos/mannesmann.png" alt="Mannesmann"></a>
+        <a class="brand-card" href="#"><img src="logos/troy.png" alt="Troy"></a>
+        <a class="brand-card" href="#"><img src="logos/wert.png" alt="Wert"></a>
+        <a class="brand-card" href="#"><img src="logos/bulflex.png" alt="Bulflex"></a>
+
+        <a class="brand-card" href="#"><img src="logos/truper.png" alt="Truper"></a>
+        <a class="brand-card" href="#"><img src="logos/pretul.png" alt="Pretul"></a>
+
+    </div>
+
+</section> 
     </main>
 
     <!-- ДОЛЕН ШАБЛОН -->
