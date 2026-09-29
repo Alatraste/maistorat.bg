@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Категории | Майстора.bg</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f5f5;
+            color: #222;
+        }
+
+        /* ГОРНА СИНЯ ЛЕНТА */
+        .top-bar {
+            background: linear-gradient(135deg, #2f62ad, #2489c5);
+            color: white;
+            padding: 20px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .top-bar .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .top-bar a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .top-bar a:hover {
+            text-decoration: underline;
+        }
+
+        /* ЗАГЛАВИЕ */
+        .page-title {
+            background: white;
+            text-align: center;
+            padding: 24px 15px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .page-title h1 {
+            margin: 0;
+            font-size: 32px;
+            color: #333;
+        }
+
+        /* КАТЕГОРИИ */
+        .categories {
+            max-width: 1200px;
+            margin: 35px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .category {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            overflow: hidden;
+            text-decoration: none;
+            color: #222;
+            transition: 0.2s;
+        }
+
+        .category:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+
+        .category img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .category h3 {
+            margin: 0;
+            padding: 16px 10px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        /* ДОЛНА СИНЯ ЛЕНТА */
+        footer {
+            margin-top: 50px;
+            background: linear-gradient(135deg, #2f62ad, #2489c5);
+            color: white;
+            padding: 40px 30px 20px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+
+        footer h3 {
+            margin-top: 0;
+        }
+
+        footer p,
+        footer a {
+            color: white;
+            font-size: 14px;
+            line-height: 1.6;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .copyright {
+            max-width: 1200px;
+            margin: 30px auto 0;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255,255,255,0.3);
+            text-align: center;
+            font-size: 13px;
+        }
+
+        /* ТАБЛЕТ */
+        @media (max-width: 900px) {
+            .categories {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* ТЕЛЕФОН */
+        @media (max-width: 550px) {
+            .top-bar {
+                padding: 16px;
+            }
+
+            .top-bar .logo {
+                font-size: 21px;
+            }
+
+            .categories {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .page-title h1 {
+                font-size: 27px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ГОРНА ЛЕНТА -->
+    <header class="top-bar">
+        <div class="logo">МАЙСТОРА.BG</div>
+        <a href="index.html">← Към магазина</a>
+    </header>
+
+    <!-- ЗАГЛАВИЕ -->
+    <section class="page-title">
+        <h1>Категории</h1>
+    </section>
+
+    <!-- ОСНОВНИ КАТЕГОРИИ -->
+    <main class="categories">
+
+        <a class="category" href="#">
+            <img src="category-01-industrial-tools.png" alt="Индустриални инструменти">
+            <h3>Индустриални инструменти</h3>
+        </a>
+
+        <a class="category" href="#">
+            <img src="category-02-power-tools.png" alt="Електроинструменти">
+            <h3>Електроинструменти</h3>
+        </a>
+
+        <a class="category" href="#">
+            <img src="category-03-cordless-tools.png" alt="Акумулаторни инструменти">
+            <h3>Акумулаторни инструменти</h3>
+        </a>
+
+        <a class="category" href="#">
+            <img src="category-04-pneumatic-tools.png" alt="Пневматични инструменти">
+            <h3>Пневматични инструменти</h3>
+        </a>
+
+        <a class="category" href="#">
+            <img src="category-05-tool-storage.png" alt="Съхранение на инструменти">
+            <h3>Съхранение на инструменти</h3>
+        </a>
+
+        <a class="category" href="#">
+            <img src="category-06-workwear.png" alt="Работно облекло">
+            <h3>Работно облекло</h3>
+        </a>
+
+        <a class="category" href="#">
+            <img src="category-07-hand-tools.png" alt="Ръчни инструменти">
+            <h3>Ръчни инструменти</h3>
+        </a>
+
+        <a class="category" href="#">
+            <img src="category-08-measuring-tools.png" alt="Измервателни инструменти">
+            <h3>Измервателни инструменти</h3>
+        </a>
+
+        <a class="category" href="#">
+            <img src="category-09-batteries-chargers.png" alt="Батерии и зарядни">
+            <h3>Батерии и зарядни</h3>
+        </a>
+
+        <a class="category" href="#">
+            <img src="category-10-pneumatics.png" alt="Пневматика">
+            <h3>Пневматика</h3>
+        </a>
+
+        <a class="category" href="#">
+            <img src="category-11-fasteners.png" alt="Крепежни елементи">
+            <h3>Крепежни елементи</h3>
+        </a>
+
+        <a class="category" href="#">
+            <img src="category-12-consumables.png" alt="Консумативи">
+            <h3>Консумативи</h3>
+        </a>
+
+    </main>
+
+    <!-- ДОЛНА ЛЕНТА -->
+    <footer>
+        <div class="footer-content">
+
+            <div>
+                <h3>МАЙСТОРА.BG</h3>
+                <p>
+                    Инструменти, машини и принадлежности<br>
+                    за професионалисти и домашни майстори.
+                </p>
+            </div>
+
+            <div>
+                <h3>Информация</h3>
+                <p>
+                    <a href="#">За нас</a><br>
+                    <a href="#">Доставка</a><br>
+                    <a href="#">Плащане</a><br>
+                    <a href="#">Гаранция</a><br>
+                    <a href="#">Връщане</a>
+                </p>
+            </div>
+
+            <div>
+                <h3>Обслужване</h3>
+                <p>
+                    <a href="#">Контакти</a><br>
+                    <a href="#">Често задавани въпроси</a><br>
+                    <a href="#">Общи условия</a><br>
+                    <a href="#">Лични данни</a>
+                </p>
+            </div>
+
+            <div>
+                <h3>Последвайте ни</h3>
+                <p>
+                    <a href="#">Facebook</a><br>
+                    <a href="#">Instagram</a><br>
+                    <a href="#">YouTube</a>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 Майстора.bg — тестова версия
+        </div>
+    </footer>
+
+</body>
+</html>
