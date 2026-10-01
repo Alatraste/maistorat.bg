@@ -31,8 +31,142 @@
     <div class="logo">МАЙСТОРА.BG</div>
     <a href="index.html">← Към магазина</a>
 </header>
-<main style="min-height:600px; padding:40px 20px;">
-  <h1>KNIPEX</h1>
+<style>
+  .brand-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 35px 20px 60px;
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 40px;
+  }
+
+  .brand-sidebar {
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    padding: 20px;
+    background: #ffffff;
+    align-self: start;
+  }
+
+  .brand-sidebar h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+
+  .brand-search {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 12px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+
+  .brand-sidebar a {
+    display: block;
+    padding: 9px 0;
+    color: #003b73;
+    text-decoration: none;
+    border-bottom: 1px solid #eeeeee;
+  }
+
+  .brand-sidebar a:hover {
+    text-decoration: underline;
+  }
+
+  .brand-content {
+    min-width: 0;
+  }
+
+  .brand-logo-card {
+    width: 290px;
+    height: 105px;
+    border: 1px solid #dddddd;
+    border-radius: 7px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+  }
+
+  .brand-logo-card img {
+    max-width: 85%;
+    max-height: 75px;
+    object-fit: contain;
+  }
+
+  .brand-intro {
+    max-width: 820px;
+    font-size: 18px;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  @media (max-width: 750px) {
+    .brand-page {
+      grid-template-columns: 1fr;
+      gap: 25px;
+    }
+
+    .brand-sidebar {
+      width: auto;
+    }
+
+    .brand-logo-card {
+      width: 100%;
+      max-width: 290px;
+    }
+  }
+</style>
+
+
+<main class="brand-page">
+
+  <!-- СТРАНИЧНА ЛЕНТА -->
+  <aside class="brand-sidebar">
+
+    <h3>Търсене</h3>
+
+    <input
+      class="brand-search"
+      type="search"
+      placeholder="Търси в KNIPEX..."
+    >
+
+    <a href="#za-knipex">За KNIPEX</a>
+    <a href="#produkti">Продукти</a>
+
+  </aside>
+
+
+  <!-- ОСНОВНО СЪДЪРЖАНИЕ -->
+  <section class="brand-content">
+
+    <div class="brand-logo-card">
+      <img src="logos/knipex.png" alt="KNIPEX">
+    </div>
+
+    <div id="za-knipex">
+
+      <p class="brand-intro">
+        Историята започва с основаването в Кроненберг, Германия, през 1882 г.
+        Началото бе положено в малка селска ковашка работилница, която с времето
+        се превърна във водещ световен специалист в производството на професионални клещи.
+      </p>
+
+    </div>
+
+    <div id="produkti">
+      <!-- Тук по-късно ще добавим категориите и продуктите на KNIPEX -->
+    </div>
+
+  </section>
+
 </main>
 <footer style="background:#003B73; color:white; padding:40px 50px 20px;margin-top:auto;">
 
