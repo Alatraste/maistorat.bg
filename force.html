@@ -5,23 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Force | Майстора.bg</title>
     <link rel="stylesheet" href="styles/brand-page.css">
+    <style>
+        .brand-logo-card{width:230px;height:95px;border:1px solid #ddd;border-radius:7px;background:#fff;display:flex;align-items:center;justify-content:center;padding:15px;box-sizing:border-box;margin:0 auto 30px}
+        .brand-logo-card img{max-width:78%;max-height:62px;object-fit:contain}
+        .brand-intro{max-width:1050px;margin:0 auto 35px;font-size:18px;line-height:1.7}
+        .products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:30px}
+        @media(max-width:1050px){.products-grid{grid-template-columns:repeat(3,1fr)}}
+        @media(max-width:850px){.products-grid{grid-template-columns:repeat(2,1fr)}}
+        @media(max-width:650px){.brand-logo-card{width:100%;max-width:300px}.products-grid{grid-template-columns:1fr}}
+    </style>
 </head>
-
 <body>
-
     <div id="header-container"></div>
-
     <main>
         <div id="sidebar-container"></div>
-
         <section id="brand-content">
-            <!-- ТУК ЩЕ ПРАВИМ СТРАНИЦАТА НА FORCE -->
+            <div class="brand-logo-card"><img src="logos/force-tools-1080x632.png" alt="Force"></div>
+            <div id="za-force"><p class="brand-intro">Force е водеща тайванска марка за професионални ръчни инструменти и специализирано оборудване.</p></div>
+            <div id="produkti"><div class="products-grid"><!-- Тук по-късно ще вкарваме продуктите на Force --></div></div>
         </section>
     </main>
-
     <div id="footer-container"></div>
-
     <script src="scripts/sidebar-loader.js"></script>
-
 </body>
 </html>
