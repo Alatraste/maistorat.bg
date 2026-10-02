@@ -34,3 +34,20 @@ main {
     margin-top: auto;
     width: 100%;
 }
+
+
+/* Центриране само на по-кратките представяния на брандове */
+#brand-content:has(#za-stanley) .brand-intro,
+#brand-content:has(#za-force) .brand-intro,
+#brand-content:has(#za-pard) .brand-intro,
+#brand-content:has(#za-wurth) .brand-intro,
+#brand-content:has(#za-cetaform) .brand-intro,
+#brand-content:has(#za-mechanic) .brand-intro,
+#brand-content:has(#za-topmaster) .brand-intro,
+#brand-content:has(#za-gross) .brand-intro,
+#brand-content:has(#za-mtx) .brand-intro,
+#brand-content:has(#za-stenso) .brand-intro,
+#brand-content:has(#za-pro-m) .brand-intro,
+#brand-content:has(#za-truper) .brand-intro {
+    text-align: center;
+}
