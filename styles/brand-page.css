@@ -51,3 +51,9 @@ main {
 #brand-content:has(#za-truper) .brand-intro {
     text-align: center;
 }
+
+/* Лека визуална корекция само за Ceta Form */
+#brand-content:has(#za-cetaform) .brand-intro {
+    position: relative;
+    left: 45px;
+}
