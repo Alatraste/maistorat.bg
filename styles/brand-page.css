@@ -41,6 +41,7 @@ main {
 #brand-content:has(#za-force) .brand-intro,
 #brand-content:has(#za-pard) .brand-intro,
 #brand-content:has(#za-wurth) .brand-intro,
+#brand-content:has(#za-cetaform) .brand-intro,
 #brand-content:has(#za-mechanic) .brand-intro,
 #brand-content:has(#za-topmaster) .brand-intro,
 #brand-content:has(#za-gross) .brand-intro,
