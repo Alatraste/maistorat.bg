@@ -1,15 +1,25 @@
-const sidebarContainer = document.getElementById("sidebar-container");
+const currentScript = document.currentScript;
+const siteRoot = new URL("../", currentScript.src);
 
-if (sidebarContainer) {
-    const scriptUrl = new URL(document.currentScript.src);
-    const sidebarUrl = new URL("../templates/sidebar-search.html", scriptUrl);
+async function loadPart(containerId, filePath) {
+    const container = document.getElementById(containerId);
 
-    fetch(sidebarUrl)
-        .then(response => response.text())
-        .then(html => {
-            sidebarContainer.innerHTML = html;
-        })
-        .catch(error => {
-            console.error("Грешка при зареждане на търсачката:", error);
-        });
+    // Ако страницата няма такова място, нищо не зареждаме.
+    if (!container) return;
+
+    try {
+        const response = await fetch(new URL(filePath, siteRoot));
+
+        if (!response.ok) {
+            throw new Error(`Не може да се зареди: ${filePath}`);
+        }
+
+        container.innerHTML = await response.text();
+    } catch (error) {
+        console.error(error);
+    }
 }
+
+loadPart("header-container", "header.html");
+loadPart("sidebar-container", "templates/sidebar-search.html");
+loadPart("footer-container", "footer.html");
