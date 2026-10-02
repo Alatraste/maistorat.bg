@@ -4,7 +4,6 @@ const siteRoot = new URL("../", currentScript.src);
 async function loadPart(containerId, filePath) {
     const container = document.getElementById(containerId);
 
-    // Ако страницата няма такова място, нищо не зареждаме.
     if (!container) return;
 
     try {
