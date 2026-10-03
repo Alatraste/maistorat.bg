@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="bg"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Перфоратори и къртачи | Индустриални инструменти | Майстора.bg</title><link rel="stylesheet" href="styles/machine-categories.css"></head>
+<body><div id="header-container"></div>
+<section class="page-title"><h1>Перфоратори и къртачи</h1></section>
+<main class="tile-grid">
+<a class="tile" href="industrial-rotary-demolition-sds-plus-rotary-hammers.html"><h3>Перфоратори SDS Plus</h3></a>
+<a class="tile" href="industrial-rotary-demolition-sds-max-rotary-hammers.html"><h3>Перфоратори SDS Max</h3></a>
+<a class="tile" href="industrial-rotary-demolition-sds-max-demolition-hammers.html"><h3>Къртачи SDS Max</h3></a>
+<a class="tile" href="industrial-rotary-demolition-hex-demolition-hammers.html"><h3>Къртачи HEX</h3></a>
+</main>
+<div id="footer-container"></div>
+<script>
+Promise.all([
+ fetch('header.html').then(r=>r.text()).then(h=>document.getElementById('header-container').innerHTML=h),
+ fetch('footer.html').then(r=>r.text()).then(h=>document.getElementById('footer-container').innerHTML=h)
+]);
+</script></body></html>

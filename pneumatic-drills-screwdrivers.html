@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="bg"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Бормашини и винтоверти | Пневматични инструменти | Майстора.bg</title><link rel="stylesheet" href="styles/machine-categories.css"></head>
+<body><div id="header-container"></div>
+<section class="page-title"><h1>Бормашини и винтоверти</h1></section>
+<main class="tile-grid">
+<a class="tile" href="pneumatic-drills-screwdrivers-hand-drills.html"><h3>Ръчни бормашини</h3></a>
+<a class="tile" href="pneumatic-drills-screwdrivers-corded-screwdrivers.html"><h3>Винтоверти</h3></a>
+<a class="tile" href="pneumatic-drills-screwdrivers-drywall-screwdrivers.html"><h3>Винтоверти за гипсокартон</h3></a>
+<a class="tile" href="pneumatic-drills-screwdrivers-impact-wrenches.html"><h3>Гайковерти</h3></a>
+<a class="tile" href="pneumatic-drills-screwdrivers-bench-drills.html"><h3>Настолни бормашини</h3></a>
+</main>
+<div id="footer-container"></div>
+<script>
+Promise.all([
+ fetch('header.html').then(r=>r.text()).then(h=>document.getElementById('header-container').innerHTML=h),
+ fetch('footer.html').then(r=>r.text()).then(h=>document.getElementById('footer-container').innerHTML=h)
+]);
+</script></body></html>

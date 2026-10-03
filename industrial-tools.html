@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="bg"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Индустриални инструменти | Майстора.bg</title><link rel="stylesheet" href="styles/machine-categories.css"></head>
+<body><div id="header-container"></div>
+<section class="page-title"><h1>Индустриални инструменти</h1><p>Категории машини</p></section>
+<main class="tile-grid">
+<a class="tile" href="industrial-drills-screwdrivers.html"><h2>Бормашини и винтоверти</h2></a>
+<a class="tile" href="industrial-rotary-demolition.html"><h2>Перфоратори и къртачи</h2></a>
+<a class="tile" href="industrial-grinders.html"><h2>Шлайфмашини</h2></a>
+<a class="tile" href="industrial-saws-cutting.html"><h2>Триони и машини за рязане</h2></a>
+<a class="tile" href="industrial-routers-planers.html"><h2>Фрези и рендета</h2></a>
+<a class="tile" href="industrial-construction-machines.html"><h2>Строителни машини</h2></a>
+<a class="tile" href="industrial-specialized-machines.html"><h2>Специализирани машини</h2></a>
+<a class="tile" href="industrial-garden-machines.html"><h2>Градински машини</h2></a>
+</main>
+<div id="footer-container"></div>
+<script>
+Promise.all([
+ fetch('header.html').then(r=>r.text()).then(h=>document.getElementById('header-container').innerHTML=h),
+ fetch('footer.html').then(r=>r.text()).then(h=>document.getElementById('footer-container').innerHTML=h)
+]);
+</script></body></html>

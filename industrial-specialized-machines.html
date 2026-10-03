@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="bg"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Специализирани машини | Индустриални инструменти | Майстора.bg</title><link rel="stylesheet" href="styles/machine-categories.css"></head>
+<body><div id="header-container"></div>
+<section class="page-title"><h1>Специализирани машини</h1></section>
+<main class="tile-grid">
+<a class="tile" href="industrial-specialized-machines-electric-shears.html"><h3>Електрически ножици</h3></a>
+<a class="tile" href="industrial-specialized-machines-electric-staplers.html"><h3>Електрически такери</h3></a>
+<a class="tile" href="industrial-specialized-machines-multi-tools.html"><h3>Мултифункционални инструменти</h3></a>
+<a class="tile" href="industrial-specialized-machines-paint-sprayers.html"><h3>Пистолети за боядисване</h3></a>
+<a class="tile" href="industrial-specialized-machines-soldering-irons.html"><h3>Поялници</h3></a>
+<a class="tile" href="industrial-specialized-machines-caulking-guns.html"><h3>Пистолети за силикон</h3></a>
+</main>
+<div id="footer-container"></div>
+<script>
+Promise.all([
+ fetch('header.html').then(r=>r.text()).then(h=>document.getElementById('header-container').innerHTML=h),
+ fetch('footer.html').then(r=>r.text()).then(h=>document.getElementById('footer-container').innerHTML=h)
+]);
+</script></body></html>

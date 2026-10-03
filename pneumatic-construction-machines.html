@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="bg"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Строителни машини | Пневматични инструменти | Майстора.bg</title><link rel="stylesheet" href="styles/machine-categories.css"></head>
+<body><div id="header-container"></div>
+<section class="page-title"><h1>Строителни машини</h1></section>
+<main class="tile-grid">
+<a class="tile" href="pneumatic-construction-machines-mixers.html"><h3>Бъркалки</h3></a>
+<a class="tile" href="pneumatic-construction-machines-tile-machines.html"><h3>Машини за плочки</h3></a>
+<a class="tile" href="pneumatic-construction-machines-vacuum-cleaners.html"><h3>Прахосмукачки</h3></a>
+<a class="tile" href="pneumatic-construction-machines-heat-guns.html"><h3>Пистолети за горещ въздух</h3></a>
+<a class="tile" href="pneumatic-construction-machines-ppr-welders.html"><h3>Лепачки за PPR тръби</h3></a>
+</main>
+<div id="footer-container"></div>
+<script>
+Promise.all([
+ fetch('header.html').then(r=>r.text()).then(h=>document.getElementById('header-container').innerHTML=h),
+ fetch('footer.html').then(r=>r.text()).then(h=>document.getElementById('footer-container').innerHTML=h)
+]);
+</script></body></html>
