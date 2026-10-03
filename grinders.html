@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="bg"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Шлайфмашини | Майстора.bg</title><link rel="stylesheet" href="styles/machine-categories.css"></head>
+<body><div id="header-container"></div>
+<section class="page-title"><h1>Шлайфмашини</h1></section>
+<main class="tile-grid"><a class="tile" href="grinders-angle-grinders.html"><h3>Ъглошлайфи</h3></a>
+<a class="tile" href="grinders-straight-grinders.html"><h3>Прави шлайфмашини</h3></a>
+<a class="tile" href="grinders-belt-sanders.html"><h3>Лентови шлайфмашини</h3></a>
+<a class="tile" href="grinders-orbital-sanders.html"><h3>Виброшлайфмашини</h3></a>
+<a class="tile" href="grinders-random-orbit-sanders.html"><h3>Ексцентършлайфмашини</h3></a>
+<a class="tile" href="grinders-polishers.html"><h3>Полирмашини</h3></a>
+<a class="tile" href="grinders-bench-grinders.html"><h3>Шмиргели / настолни шлайфмашини</h3></a>
+<a class="tile" href="grinders-rotary-tools.html"><h3>Шлифовалки</h3></a>
+<a class="tile" href="grinders-wall-ceiling-sanders.html"><h3>Шлайфмашини за стени и тавани (жирафи)</h3></a></main>
+<div id="footer-container"></div>
+<script>
+Promise.all([
+ fetch('header.html').then(r=>r.text()).then(h=>document.getElementById('header-container').innerHTML=h),
+ fetch('footer.html').then(r=>r.text()).then(h=>document.getElementById('footer-container').innerHTML=h)
+]);
+</script></body></html>
