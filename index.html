@@ -534,6 +534,35 @@ footer a{
     }
 }
 </style>
+
+<style id="portrait-mobile-fix">
+@media (max-width:700px){
+ html,body{width:100%;max-width:100%;overflow-x:hidden}
+ header{width:100%;padding:12px 14px!important;display:flex!important;flex-direction:column!important;gap:12px!important}
+ .logo{font-size:25px!important;text-align:center}
+ .search{width:100%!important;max-width:none!important}
+ .search input{width:1%!important;min-width:0!important;flex:1}
+ .search button{flex:0 0 auto;padding:0 18px!important}
+ .header-icons{width:100%;justify-content:space-around!important;gap:6px!important;font-size:13px!important}
+ nav{width:100%!important;padding:0!important;margin:0!important;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;overflow:visible!important}
+ nav a{width:auto!important;min-width:0!important;padding:11px 4px!important;font-size:11px!important;line-height:1.2!important;white-space:normal!important;overflow-wrap:anywhere;text-align:center}
+ .hero{width:100%!important;aspect-ratio:16/9!important;min-height:0!important;padding:0!important;background-size:cover!important;background-position:center!important}
+ .hero-image-button{left:4%!important;top:66%!important;width:42%!important;height:16%!important}
+ .container{width:100%!important;padding:0 14px!important}
+ .section-title{width:100%}
+ .categories{grid-template-columns:repeat(2,minmax(0,1fr))!important;width:100%!important}
+ .category{min-width:0}
+ .category-image{width:100%!important;height:120px!important;object-fit:cover!important}
+ .products{grid-template-columns:repeat(2,minmax(0,1fr))!important;width:100%!important}
+ .product{min-width:0;padding:10px!important}
+ .product-image{height:130px!important}
+ .promo-banners,.blog{grid-template-columns:1fr!important}
+}
+@media (max-width:390px){
+ nav{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ .products{grid-template-columns:1fr!important}
+}
+</style>
 </head>
 
 <body>
@@ -597,27 +626,27 @@ footer a{
 
     <div class="section-title">
         <h2>Машини и принадлежности</h2>
-        <a href="#">ВСИЧКИ КАТЕГОРИИ →</a>
+        <a href="categories.html">ВСИЧКИ КАТЕГОРИИ →</a>
     </div>
 
 <div class="categories">
 
-  <a class="category" href="#">
+  <a class="category" href="industrial-tools.html">
     <img class="category-image" src="category-01-industrial-tools.png" alt="Индустриални инструменти">
     <h3>Индустриални инструменти</h3>
   </a>
 
-  <a class="category" href="#">
+  <a class="category" href="power-tools.html">
     <img class="category-image" src="category-02-power-tools.png" alt="Електро инструменти">
     <h3>Електро инструменти</h3>
   </a>
 
-  <a class="category" href="#">
+  <a class="category" href="cordless-tools.html">
     <img class="category-image" src="category-03-cordless-tools.png" alt="Акумулаторни инструменти">
     <h3>Акумулаторни инструменти</h3>
   </a>
 
-  <a class="category" href="#">
+  <a class="category" href="pneumatic-tools.html">
     <img class="category-image" src="category-04-pneumatic-tools.png" alt="Пневматични инструменти">
     <h3>Пневматични инструменти</h3>
   </a>
@@ -632,7 +661,7 @@ footer a{
     <h3>Работна екипировка</h3>
   </a>
 
-  <a class="category" href="#">
+  <a class="category" href="hand-tools.html">
     <img class="category-image" src="category-07-hand-tools.png" alt="Ръчни инструменти">
     <h3>Ръчни инструменти</h3>
   </a>
