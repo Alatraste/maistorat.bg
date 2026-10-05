@@ -445,6 +445,19 @@ footer a{
 }
 
 @media(max-width:700px){
+    html,body{max-width:100%;overflow-x:hidden}
+    header{padding:14px 4%;gap:14px}
+    .search input{min-width:0;padding:12px 10px}.search button{padding:0 14px}
+    nav{padding:0;display:grid;grid-template-columns:repeat(3,1fr);margin-top:0}
+    nav a{padding:12px 5px;font-size:11px;white-space:normal;text-align:center;min-height:44px}
+    .container{width:94%}
+    .section{padding:30px 0}
+    .section-title{gap:10px}.section-title h2{font-size:21px}.section-title a{font-size:11px;text-align:right}
+    .category-image{width:100%;height:115px;object-fit:cover;font-size:38px}
+    .product-image{height:145px}
+    .hero{aspect-ratio:16/8;min-height:0;padding:0;background-size:cover}
+    .hero-image-button{left:5%;top:66%;width:38%;height:13%}
+
 
     .topbar{
         display:none;
@@ -506,6 +519,11 @@ footer a{
 }
 
 @media(max-width:450px){
+    .logo{font-size:25px}.header-icons{font-size:12px;gap:10px;flex-wrap:wrap}
+    .categories{gap:10px}.category h3{font-size:13px;margin:11px 6px}
+    .benefits{grid-template-columns:1fr 1fr;padding:20px 3%;gap:8px}.benefit{padding:10px 4px;font-size:13px}
+    footer[style]{padding:30px 18px 15px!important}footer[style]>div:first-child{grid-template-columns:1fr!important;gap:18px!important}
+
 
     .products{
         grid-template-columns:1fr;
