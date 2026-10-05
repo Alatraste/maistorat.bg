@@ -60,4 +60,4 @@ main {
 
 
 /* Mobile layout */
-@media (max-width:700px){main{display:block;width:100%}#sidebar-container{display:none}#brand-content{width:100%;padding:18px 14px}#brand-content img{max-width:100%;height:auto}.brand-intro{max-width:100%;text-align:left!important;position:static!important;left:auto!important}}
+@media (max-width:700px){main{display:block;width:100%}#sidebar-container{display:block;width:100%;box-sizing:border-box}#brand-content{width:100%;padding:18px 14px}#brand-content img{max-width:100%;height:auto}.brand-intro{max-width:100%;text-align:left!important;position:static!important;left:auto!important}}
