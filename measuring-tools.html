@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Измервателни инструменти | Майстора.bg</title>
+<link rel="stylesheet" href="styles/machine-categories.css">
+<style>
+.measuring-tools-grid{width:min(1400px,calc(100% - 40px));grid-template-columns:repeat(5,minmax(0,1fr));gap:18px}
+.measuring-tools-grid .image-tile img,.measuring-tools-grid .image-placeholder{width:100%;height:180px;display:block;background:#fff;padding:10px}
+.measuring-tools-grid .image-placeholder{border-bottom:1px solid #eee}
+.measuring-tools-grid .image-tile h2{font-size:17px;padding:14px 8px;min-height:62px}
+@media(max-width:1100px){.measuring-tools-grid{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:900px){.measuring-tools-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:550px){.measuring-tools-grid{grid-template-columns:1fr;width:min(100% - 28px,1400px)}}
+</style>
+</head>
+<body>
+<div id="header-container"></div>
+<section class="page-title"><h1>Измервателни инструменти</h1><p>Категории</p></section>
+<main class="tile-grid image-tiles measuring-tools-grid">
+<a class="tile image-tile" href="#"><div class="image-placeholder" aria-label="Място за снимка: Ролетки"></div><h2>Ролетки</h2></a>
+<a class="tile image-tile" href="#"><div class="image-placeholder" aria-label="Място за снимка: Шублери"></div><h2>Шублери</h2></a>
+<a class="tile image-tile" href="#"><div class="image-placeholder" aria-label="Място за снимка: Ъгломери"></div><h2>Ъгломери</h2></a>
+<a class="tile image-tile" href="#"><div class="image-placeholder" aria-label="Място за снимка: Луфтомери"></div><h2>Луфтомери</h2></a>
+<a class="tile image-tile" href="#"><div class="image-placeholder" aria-label="Място за снимка: Резбомери"></div><h2>Резбомери</h2></a>
+<a class="tile image-tile" href="#"><div class="image-placeholder" aria-label="Място за снимка: Нивелири"></div><h2>Нивелири</h2></a>
+<a class="tile image-tile" href="#"><div class="image-placeholder" aria-label="Място за снимка: Линии"></div><h2>Линии</h2></a>
+<a class="tile image-tile" href="#"><div class="image-placeholder" aria-label="Място за снимка: Метри"></div><h2>Метри</h2></a>
+<a class="tile image-tile" href="#"><div class="image-placeholder" aria-label="Място за снимка: Прави ъгли"></div><h2>Прави ъгли</h2></a>
+<a class="tile image-tile" href="#"><div class="image-placeholder" aria-label="Място за снимка: Микрометри"></div><h2>Микрометри</h2></a>
+<a class="tile image-tile" href="#"><div class="image-placeholder" aria-label="Място за снимка: Мастари"></div><h2>Мастари</h2></a>
+<a class="tile image-tile" href="#"><div class="image-placeholder" aria-label="Място за снимка: Лазерни ролетки"></div><h2>Лазерни ролетки</h2></a>
+<a class="tile image-tile" href="#"><div class="image-placeholder" aria-label="Място за снимка: Лазерни нивелири"></div><h2>Лазерни нивелири</h2></a>
+<a class="tile image-tile" href="#"><div class="image-placeholder" aria-label="Място за снимка: Мултицети и амперклещи"></div><h2>Мултицети и амперклещи</h2></a>
+<a class="tile image-tile" href="#"><div class="image-placeholder" aria-label="Място за снимка: Фазомери"></div><h2>Фазомери</h2></a>
+</main>
+<div id="footer-container"></div>
+<script>Promise.all([fetch('header.html').then(r=>r.text()).then(h=>document.getElementById('header-container').innerHTML=h),fetch('footer.html').then(r=>r.text()).then(h=>document.getElementById('footer-container').innerHTML=h)]);</script>
+</body>
+</html>
