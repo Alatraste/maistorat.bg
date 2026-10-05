@@ -170,7 +170,19 @@
                 font-size: 27px;
             }
         }
-    </style>
+    
+        @media (max-width: 550px) {
+            html,body{width:100%;max-width:100%;overflow-x:hidden}
+            .top-bar{padding:14px 12px;gap:10px}
+            .top-bar .logo{font-size:20px;white-space:nowrap}
+            .top-bar a{font-size:13px;text-align:right}
+            .categories{width:100%;padding:0 12px;margin:20px auto;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+            .category{min-width:0}
+            .category img{height:125px;object-fit:cover}
+            .category h3{font-size:14px;padding:12px 6px}
+            footer{padding:28px 16px 16px}.footer-content{grid-template-columns:1fr;gap:16px}
+        }
+</style>
 </head>
 
 <body>
