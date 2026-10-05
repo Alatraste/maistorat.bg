@@ -1,50 +1,32 @@
 <style>
-.brand-sidebar {
-    border: 1px solid #dddddd;
-    border-radius: 8px;
-    padding: 22px;
-    background: #ffffff;
-    align-self: start;
-}
-
-.brand-sidebar h3 {
-    margin-top: 0;
-    margin-bottom: 15px;
-    font-size: 20px;
-}
-
-.brand-search {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 11px 12px;
-    border: 1px solid #cccccc;
-    border-radius: 6px;
-    font-size: 15px;
-    margin-bottom: 20px;
-}
-
-.brand-sidebar a {
-    display: block;
-    padding: 10px 0;
-    color: #003b73;
-    text-decoration: none;
-    border-bottom: 1px solid #eeeeee;
-}
-
-.brand-sidebar a:hover {
-    text-decoration: underline;
-}
+.brand-sidebar{border:1px solid #ddd;border-radius:8px;padding:22px;background:#fff;align-self:start;box-sizing:border-box}
+.brand-sidebar h3{margin:0 0 18px;font-size:20px}
+.filter-group{margin-bottom:20px}
+.filter-group label,.filter-title{display:block;margin-bottom:8px;font-weight:600;color:#222}
+.brand-search,.brand-select,.price-input{width:100%;box-sizing:border-box;padding:11px 12px;border:1px solid #ccc;border-radius:6px;font-size:15px;background:#fff}
+.price-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.filter-button{width:100%;padding:11px 12px;border:0;border-radius:6px;background:#003b73;color:#fff;font-size:15px;font-weight:600;cursor:pointer}
+.filter-button:hover{background:#002b55}
+@media(max-width:700px){.brand-sidebar{margin:14px;border-radius:8px;padding:18px}.price-row{grid-template-columns:1fr 1fr}}
 </style>
-
-<aside class="brand-sidebar">
-    <h3>Търсене</h3>
-
-    <input
-        class="brand-search"
-        type="search"
-        placeholder="Търси в марката..."
-    >
-
-    <a href="#za-markata">За марката</a>
-    <a href="#produkti">Продукти</a>
+<aside class="brand-sidebar" aria-label="Търсене и филтри">
+  <h3>Търсене</h3>
+  <div class="filter-group">
+    <label for="sidebar-search">Име или код</label>
+    <input id="sidebar-search" class="brand-search" type="search" placeholder="Търси по име или код...">
+  </div>
+  <div class="filter-group">
+    <label for="sidebar-brand">Марка</label>
+    <select id="sidebar-brand" class="brand-select">
+      <option value="">Всички марки</option>
+    </select>
+  </div>
+  <div class="filter-group">
+    <span class="filter-title">Цена</span>
+    <div class="price-row">
+      <input class="price-input" type="number" min="0" inputmode="decimal" placeholder="От">
+      <input class="price-input" type="number" min="0" inputmode="decimal" placeholder="До">
+    </div>
+  </div>
+  <button class="filter-button" type="button">Търси</button>
 </aside>
