@@ -1,3 +1,24 @@
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Arial,Helvetica,sans-serif;background:#f5f5f5;color:#222}body{display:flex;flex-direction:column;min-height:100vh}#header-container,#footer-container{width:100%}.page-title{background:#fff;text-align:center;padding:24px 15px;border-bottom:1px solid #ccc}.page-title h1{margin:0;font-size:32px;color:#333}.page-title p{margin:9px 0 0;color:#666}.tile-grid{width:min(1200px,calc(100% - 40px));margin:35px auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;flex:1}.tile{min-height:150px;background:#fff;border:1px solid #ddd;border-radius:6px;text-decoration:none;color:#222;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;transition:.2s}.tile:hover{transform:translateY(-3px);box-shadow:0 5px 15px rgba(0,0,0,.15);border-color:#2f62ad}.tile h2,.tile h3{margin:0}.tile h2{font-size:20px}.tile h3{font-size:18px}.product-placeholder{width:min(1200px,calc(100% - 40px));margin:35px auto;min-height:260px;background:#fff;border:1px solid #ddd;border-radius:6px;display:flex;align-items:center;justify-content:center;text-align:center;padding:30px;color:#666;flex:1}.back-link{display:inline-block;margin-top:12px;color:#285493;text-decoration:none;font-weight:700}.back-link:hover{text-decoration:underline}@media(max-width:900px){.tile-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:550px){.page-title h1{font-size:27px}.tile-grid{grid-template-columns:1fr;width:min(100% - 28px,1200px)}.tile{min-height:120px}.product-placeholder{width:min(100% - 28px,1200px)}}.image-tile{padding:0;display:block;overflow:hidden}.image-tile img{width:100%;height:180px;object-fit:cover;display:block;background:#fff;padding:10px}.image-tile h2{padding:16px 10px;min-height:58px;display:flex;align-items:center;justify-content:center}.image-tiles .tile{min-height:0}.image-tile img.construction-image{width:100%;height:180px;object-fit:cover;object-position:center;display:block;background:#fff;padding:10px;transform:none}
 @media(max-width:550px){.page-title{padding:18px 12px}.tile-grid{gap:14px;margin:20px auto}.image-tile img{height:155px}.image-tile h2{font-size:18px;min-height:54px;padding:12px 8px}}
 
+
+
+/* Legacy browser fallback (Windows 7-era browsers).
+   Modern Grid/Flex rules above override this where supported. */
+.tile-grid{max-width:1200px;width:96%;font-size:0;text-align:left}
+.tile-grid .tile{display:inline-block;vertical-align:top;width:23%;margin:1%;font-size:16px;min-height:150px}
+.image-tile img{max-width:100%;height:auto}
+@supports (display:grid){
+  .tile-grid{width:min(1200px,calc(100% - 40px));font-size:initial;display:grid;text-align:initial}
+  .tile-grid .tile{display:flex;width:auto;margin:0;font-size:initial}
+  .image-tiles .image-tile{display:block}
+}
+@media(max-width:900px){
+  .tile-grid .tile{width:48%}
+  @supports (display:grid){.tile-grid .tile{width:auto}}
+}
+@media(max-width:550px){
+  .tile-grid{width:94%}
+  .tile-grid .tile{width:98%;margin:1%}
+  @supports (display:grid){.tile-grid{width:min(100% - 28px,1200px)}.tile-grid .tile{width:auto;margin:0}}
+}
