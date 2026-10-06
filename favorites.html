@@ -213,42 +213,49 @@ h1{
     </div>
 </main>
 <script>
+const FAVORITES_KEY = 'maistora-favorites';
 const favoritesBox = document.getElementById('favorites');
-let found = false;
 
-favoritesBox.innerHTML = '';
+function getFavorites() {
+    try { return JSON.parse(localStorage.getItem(FAVORITES_KEY)) || []; }
+    catch (e) { return []; }
+}
 
-for (let i = 0; i < 100; i++) {
-    const product = localStorage.getItem('favorite-product-' + i);
+function saveFavorites(items) {
+    localStorage.setItem(FAVORITES_KEY, JSON.stringify(items));
+}
 
-    if (product) {
-        favoritesBox.insertAdjacentHTML('beforeend', product);
-        found = true;
+function renderFavorites() {
+    const favorites = getFavorites();
+    favoritesBox.innerHTML = '';
 
-        const addedProduct = favoritesBox.lastElementChild;
-        const heart = addedProduct.querySelector('.favorite');
-
-        if (heart) {
-            heart.textContent = '♥';
-
-            heart.addEventListener('click', function () {
-                localStorage.removeItem('favorite-product-' + i);
-                localStorage.setItem('favorite-' + i, 'false');
-                addedProduct.remove();
-
-                if (favoritesBox.children.length === 0) {
-                    favoritesBox.innerHTML =
-                        '<div class="empty">Все още нямате добавени любими продукти.</div>';
-                }
-            });
-        }
+    if (!favorites.length) {
+        favoritesBox.innerHTML = '<div class="empty">Все още нямате добавени любими продукти.</div>';
+        return;
     }
+
+    favorites.forEach(item => {
+        favoritesBox.insertAdjacentHTML('beforeend', item.html);
+        const product = favoritesBox.lastElementChild;
+        product.dataset.productId = item.id;
+
+        let heart = product.querySelector('.favorite');
+        if (!heart) {
+            heart = document.createElement('button');
+            heart.className = 'favorite';
+            heart.title = 'Премахни от любими';
+            product.prepend(heart);
+        }
+        heart.textContent = '♥';
+
+        heart.addEventListener('click', () => {
+            saveFavorites(getFavorites().filter(f => f.id !== item.id));
+            renderFavorites();
+        });
+    });
 }
 
-if (!found) {
-    favoritesBox.innerHTML =
-        '<div class="empty">Все още нямате добавени любими продукти.</div>';
-}
+renderFavorites();
 </script>
     <footer style="background:#003B73; color:white; padding:40px 50px 20px;margin-top:auto;">
 
