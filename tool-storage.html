@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Съхранение на инструменти | Майстора.bg</title>
+<link rel="stylesheet" href="styles/machine-categories.css">
+<style>
+.tool-storage-grid{width:min(1100px,calc(100% - 40px));grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.tool-storage-grid .image-tile img,.tool-storage-grid .image-placeholder{width:100%;height:220px;display:block;background:#fff;padding:10px}
+.tool-storage-grid .image-placeholder{border-bottom:1px solid #eee}
+.tool-storage-grid .image-tile h2{font-size:18px;padding:15px 8px;min-height:64px}
+@media(max-width:900px){.tool-storage-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:550px){.tool-storage-grid{grid-template-columns:1fr;width:min(100% - 28px,1100px)}}
+</style>
+</head>
+<body>
+<div id="header-container"></div>
+<section class="page-title"><h1>Съхранение на инструменти</h1><p>Категории</p></section>
+<main class="tile-grid image-tiles tool-storage-grid">
+<a class="tile image-tile" href="tool-storage-cases.html"><div class="image-placeholder" aria-label="Място за снимка: Куфари за инструменти"></div><h2>Куфари за инструменти</h2></a>
+<a class="tile image-tile" href="tool-storage-boxes.html"><div class="image-placeholder" aria-label="Място за снимка: Кутии за инструменти"></div><h2>Кутии за инструменти</h2></a>
+<a class="tile image-tile" href="tool-storage-bags.html"><div class="image-placeholder" aria-label="Място за снимка: Чанти за инструменти"></div><h2>Чанти за инструменти</h2></a>
+<a class="tile image-tile" href="tool-storage-backpacks.html"><div class="image-placeholder" aria-label="Място за снимка: Раници за инструменти"></div><h2>Раници за инструменти</h2></a>
+<a class="tile image-tile" href="tool-storage-organizers.html"><div class="image-placeholder" aria-label="Място за снимка: Органайзери"></div><h2>Органайзери</h2></a>
+<a class="tile image-tile" href="tool-storage-belts-holsters.html"><div class="image-placeholder" aria-label="Място за снимка: Колани и кобури"></div><h2>Колани и кобури</h2></a>
+</main>
+<div id="footer-container"></div>
+<script>Promise.all([fetch('header.html').then(r=>r.text()).then(h=>document.getElementById('header-container').innerHTML=h),fetch('footer.html').then(r=>r.text()).then(h=>document.getElementById('footer-container').innerHTML=h)]);</script>
+</body>
+</html>
