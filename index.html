@@ -1078,60 +1078,61 @@ footer a{
 
 </footer>
 <script>
-const hearts = document.querySelectorAll('.favorite');
+const FAVORITES_KEY = 'maistora-favorites';
 
-hearts.forEach((heart, index) => {
-    const product = heart.closest('.product');
+function getFavorites() {
+    try { return JSON.parse(localStorage.getItem(FAVORITES_KEY)) || []; }
+    catch (e) { return []; }
+}
 
-    const saved = localStorage.getItem('favorite-' + index);
+function saveFavorites(items) {
+    localStorage.setItem(FAVORITES_KEY, JSON.stringify(items));
+}
 
-    if (saved === 'true') {
-        heart.textContent = '♥';
-    }
+function productId(product, index) {
+    return product.dataset.productId || ('home-' + index);
+}
+
+function updateFavoritesCount() {
+    const counter = document.getElementById('favorites-count');
+    if (counter) counter.textContent = getFavorites().length;
+}
+
+document.querySelectorAll('.product').forEach((product, index) => {
+    const heart = product.querySelector('.favorite');
+    if (!heart) return;
+
+    const id = productId(product, index);
+    product.dataset.productId = id;
+
+    const refreshHeart = () => {
+        heart.textContent = getFavorites().some(item => item.id === id) ? '♥' : '♡';
+    };
+
+    refreshHeart();
 
     heart.addEventListener('click', function () {
+        let favorites = getFavorites();
+        const existing = favorites.findIndex(item => item.id === id);
 
-        if (this.textContent.trim() === '♡') {
-            this.textContent = '♥';
-
-            localStorage.setItem('favorite-' + index, 'true');
-
-            if (product) {
-                localStorage.setItem(
-                    'favorite-product-' + index,
-                    product.outerHTML
-                );
-            }
-
+        if (existing >= 0) {
+            favorites.splice(existing, 1);
         } else {
-    this.textContent = '♡';
+            const clone = product.cloneNode(true);
+            clone.querySelector('.favorite')?.remove();
+            favorites.push({
+                id,
+                html: clone.outerHTML
+            });
+        }
 
-    localStorage.setItem('favorite-' + index, 'false');
-    localStorage.removeItem('favorite-product-' + index);
-
-  
-}
-      updateFavoritesCount();
+        saveFavorites(favorites);
+        refreshHeart();
+        updateFavoritesCount();
     });
 });
- function updateFavoritesCount() {
-    let count = 0;
 
-    for (let i = 0; i < localStorage.length; i++) {
-        const key = localStorage.key(i);
-
-        if (key && key.startsWith('favorite-') && localStorage.getItem(key) === 'true') {
-            count++;
-        }
-    }
-
-    const counter = document.getElementById('favorites-count');
-    if (counter) {
-        counter.textContent = count;
-    }
-}
-
-updateFavoritesCount();;
+updateFavoritesCount();
 </script>
  
 </body>
