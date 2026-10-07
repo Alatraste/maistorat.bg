@@ -1,12 +1,8 @@
 <!DOCTYPE html>
-<html lang="bg"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Ръчни бормашини | Майстора.bg</title><link rel="stylesheet" href="styles/machine-categories.css"></head>
-<body><div id="header-container"></div>
-<section class="page-title"><h1>Ръчни бормашини</h1></section>
-<main class="product-placeholder"><div><h2>Ръчни бормашини</h2><p>Тук ще добавим продуктите от тази подкатегория.</p><a class="back-link" href="drills-screwdrivers.html">← Назад към Бормашини и винтоверти</a></div></main>
-<div id="footer-container"></div>
-<script>
-Promise.all([
- fetch('header.html').then(r=>r.text()).then(h=>document.getElementById('header-container').innerHTML=h),
- fetch('footer.html').then(r=>r.text()).then(h=>document.getElementById('footer-container').innerHTML=h)
-]);
-</script></body></html>
+<html lang="bg"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Ръчни бормашини | Майстора.bg</title><link rel="stylesheet" href="styles/brand-page.css"><style>.page-title{text-align:center;padding:28px 20px 5px}.category-page{max-width:1250px;margin:auto;padding:20px}.products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}.product-card{background:#fff;border:1px solid #ddd;border-radius:8px;padding:20px;text-decoration:none;color:#222;min-height:110px;display:flex;flex-direction:column;justify-content:center;gap:8px}.product-card span{color:#666;font-size:14px}.product-card:hover{box-shadow:0 3px 10px rgba(0,0,0,.12);transform:translateY(-2px)}@media(max-width:900px){.products-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:600px){.products-grid{grid-template-columns:1fr}}</style></head>
+<body><div id="header-container"></div><section class="page-title"><h1>Ръчни бормашини</h1></section><main class="category-page"><div class="products-grid">
+<a class="product-card" href="bosch-pro-gbm-6-re.html"><strong>Bosch PRO GBM 6 RE</strong><span>PRO · 350 W</span></a>
+<a class="product-card" href="bosch-pro-gbm-10-re.html"><strong>Bosch PRO GBM 10 RE</strong><span>PRO · 600 W</span></a>
+<a class="product-card" href="bosch-pro-gbm-13-2-re.html"><strong>Bosch PRO GBM 13-2 RE</strong><span>PRO · 750 W · 2 скорости</span></a>
+<a class="product-card" href="bosch-pro-gbm-13-hre.html"><strong>Bosch PRO GBM 13 HRE</strong><span>PRO · 550 W · 60 Nm</span></a>
+</div></main><div id="footer-container"></div><script>Promise.all([fetch('header.html').then(r=>r.text()).then(h=>document.getElementById('header-container').innerHTML=h),fetch('footer.html').then(r=>r.text()).then(h=>document.getElementById('footer-container').innerHTML=h)]);</script></body></html>
